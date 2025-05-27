@@ -1,0 +1,360 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heading h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #000; /* Dark blue color for car industry theme */
+}
+
+.heading p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Our Story Section */
+
+.our-story {
+  padding: 40px 20px; /* Add padding around the section */
+  background-color: #f9f9f9; /* Light grey background */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 900px;
+  margin: 0 auto; /* Center the section on the page */
+  text-align: left;
+}
+
+.our-story h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333; /* Dark grey color */
+}
+
+.our-story p {
+  padding: 40px 20px;
+  background-color: #e6ffe6; /* Soft light green background */
+
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.1rem; /* Slightly larger font for readability */
+  line-height: 1.6rem; /* Improved line spacing for readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.our-story p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Our Services Section */
+.our-services {
+  padding: 40px 20px; /* Add padding around the section */
+  background-color: #e6ffe6; /* Soft light green background */
+
+  border-radius: 8px; /* Rounded corners */
+  max-width: 900px;
+  margin: 0 auto; /* Center the section on the page */
+  text-align: left;
+}
+
+.our-services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+
+  color: #333; /* Dark grey color */
+}
+
+.our-services ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.our-services li {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Team Section */
+
+.team {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 60px 20px;
+}
+
+.team h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.team-member {
+  display: inline-block;
+  width: 400px; /* Adjust the width as needed */
+  margin: 20px;
+  background-color: #e6ffe6; /* Soft light green background */
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  vertical-align: top;
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-member img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 5px solid white;
+  background-color: #f0f0f0;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.team-member p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Our Commitment Section */
+.commitment {
+  background-color: #e6ffe6; /* Soft light green background */
+  margin-bottom: 20px;
+  padding: 60px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: full;
+  text-align: center; /* Center align the text */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensure content is centered within the container */
+}
+
+.commitment h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray color */
+  font-weight: bold;
+}
+
+.commitment p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #666;
+}
+.commitment p:last-child {
+  margin-bottom: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 1%;
+  border-bottom-right-radius: 20%;
+  height: 0.75cm;
+  background: linear-gradient(to right, #f1efef, red, darkgreen);
+  padding: 20px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.search-bar input[type="text"] {
+  border: none;
+  outline: none;
+  padding: 5px;
+  flex-grow: 1;
+  align-items: end;
+}
+
+.search-bar button[type="submit"] {
+  background-color: lightgreen;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button[type="submit"]:hover {
+  background-color: #87ceeb;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: 280;
+  padding: 0;
+  margin-left: auto;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #000;
+}
+
+.cart,
+.user,
+.wishlist,
+.notifications {
+  position: relative;
+  color: #fff;
+}
+
+.cart .item-count,
+.notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.user .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.user:hover .dropdown {
+  display: block;
+}
+
+.user .dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user .dropdown li {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user .dropdown li:last-child {
+  border-bottom: none;
+}
+
+.user .dropdown li a {
+  color: #494646;
+  text-decoration: none;
+}
+
+.user .dropdown li a:hover {
+  color: #000;
+}
+/* Logo styles */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  margin-right: 1rem;
+}
+
+.navbar-logo img {
+  margin-top: 0px;
+  height: auto;
+  max-height: 84%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  height: 100vh;
+}
+
+.item {
+  margin-right: 10%;
+  margin-left: 5%;
+  width: 90%;
+  margin-top: 1cm;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+  background: linear-gradient(to top, white, black);
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-left: 0%;
+  margin-top: 0%;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* Ensure images fill the area properly */
+  border-bottom: 2px solid #ddd;
+}
+
+.btn {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.body {
+  background: linear-gradient(to bottom, #f1efef, lightgreen);
+}

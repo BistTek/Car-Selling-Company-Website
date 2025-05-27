@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #1e293b;
+        --light: #f8fafc;
+        --gray: #94a3b8;
+        --dark: #0f172a;
+        --success: #10b981;
+      }
+
+
+      /* Header & Navigation */
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .logo img {
+        height: 75px;
+        border-radius: 45%;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 0;
+        position: relative;
+      }
+
+      nav a:hover {
+        opacity: 0.9;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: white;
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 4rem 2rem 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary);
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-col ul li a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer-col ul li a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="images/logo.png" alt="Vehicle Vault Logo" />
+          <span>FAST CAR</span>
+        </div>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="offers.html">About Us</a></li>
+            <li><a href="register.html">Seller Registration</a></li>
+            <li><a href="login.html">Seller Portal</a></li>
+          </ul>
+        </nav>
+    </header>
+</head>
+<body style="background:linear-gradient(to bottom, #f1efef, lightgreen)">
+
+  <form id="loginForm" method="POST" action="login.php">
+      <div class="body">
+      <div class="Login-sen">Login to Continue </div>
+      <div class="txt_field">
+          <input type="text" id="username" name="username" placeholder="Username" required>
+          <span></span>
+        
+      </div>
+      <div class="txt_field">
+          <input type="password" id="password" name="password" placeholder="Password" required>
+          <span></span>
+          
+      </div> 
+      <input type="submit" value="Login">
+      <div class="forgot">Forgot password?</div>
+     
+      <div class="users_signup">
+          Don't have an Account?  <a href="register.html"> Register</a>
+      </div>
+      </div>
+  </form>
+  <script>
+
+      // Handle input focus and blur events
+      document.querySelectorAll('input').forEach(input => {
+         input.addEventListener('focus', () => {
+              input.style.backgroundColor = 'yellow';
+          });
+          
+          
+          input.addEventListener('blur', () => {
+              input.style.backgroundColor = 'white';
+          });
+      });
+
+      // Handle button hover event
+      document.querySelectorAll('button').forEach(button => {
+          button.addEventListener('mouseover', () => {
+              button.style.backgroundColor = 'lightblue';
+          });
+
+          button.addEventListener('mouseout', () => {
+              button.style.backgroundColor = '';
+          });
+      });
+  </script>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+    <h3>Vehicle Vault</h3>
+      <p>
+        Your premier destination for luxury and performance vehicles. We
+        connect discerning buyers with exceptional automobiles.
+      </p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+    <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Offers.html">About Us</a></li>
+        <li><a href="register.html">Seller Registration</a></li>
+        <li><a href="login.html">Seller Page</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+    <h3>Services</h3>
+      <ul>
+        <li><a href="#">Vehicle Purchase</a></li>
+        <li><a href="#">Trade-In Evaluation</a></li>
+        <li><a href="#">Financing</a></li>
+        <li><a href="#">Extended Warranties</a></li>
+        <li><a href="#">Delivery Options</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+    <h3>Contact</h3>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
+        <li><i class="fas fa-phone"></i> 01-543678</li>
+        <li><i class="fas fa-envelope"></i> info@fastcar.com</li>
+        <li><i class="fas fa-clock"></i> Mon-Sat: 9am - 7pm</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      &copy; FAST CAR | All rights reserved. |
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

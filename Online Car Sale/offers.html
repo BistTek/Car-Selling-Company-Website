@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAR SHOP Offer Page</title>
+    <link rel="stylesheet" href="offers.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #1e293b;
+        --light: #f8fafc;
+        --gray: #94a3b8;
+        --dark: #0f172a;
+        --success: #10b981;
+      }
+      body{
+        margin: 0;
+      }
+
+      /* Header & Navigation */
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .logo img {
+        height: 75px;
+        border-radius: 45%;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 0;
+        position: relative;
+      }
+
+      nav a:hover {
+        opacity: 0.9;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: white;
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 4rem 2rem 2rem;
+        margin: 0;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary);
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-col ul li a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer-col ul li a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="images/logo.png" alt="Vehicle Vault Logo" />
+          <span>FAST CAR</span>
+        </div>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="offers.html">About Us</a></li>
+            <li><a href="register.html">Seller Registration</a></li>
+            <li><a href="login.html">Seller Portal</a></li>
+          </ul>
+        </nav>
+    </header>
+    <div class="heading">
+      <h1>About Us</h1>
+      <p>Driven by Excellence in the Automotive World</p>
+    </div>
+  
+  <!-- Our Story Section -->
+  <section class="our-story">
+    <h2>Our Story</h2>
+    <p>
+      Founded in 2000, Vehicle Vault  Inc. began with a passion for automobiles and a commitment to delivering the finest automotive experience. From its humble beginnings as a family-owned business, Vehicle Vault  has grown into a renowned name in the industry, offering a diverse selection of high-quality vehicles and exceptional customer service. Our main office is located at 1234 Luxury Lane, Suite 101, Auto City, AC 56789, Country. For inquiries, you can reach us by telephone at +1 (123) 456-7890 or by fax at +1 (123) 456-7891. Our email address is contact@luxocar.com. Our dedicated team includes John Smith, our CEO, Jane Doe, our Sales Manager, Emily Johnson, our Service Director, and Michael Brown, our Customer Relations Specialist. Whether you’re in the market for a brand-new car, a certified pre-owned vehicle, or top-notch automotive services, Vehicle Vault  is here to ensure your experience is seamless and enjoyable..</p>
+  </section>
+  
+  <!-- Our Services Section -->
+  <section class="our-services">
+    <h2>What We Offer</h2>
+    <ul>
+        <li>New and Pre-Owned Vehicles: A vast selection of cars, trucks, and SUVs to suit every budget and lifestyle.</li>
+        <li>Financing Options: Flexible financing solutions tailored to meet your needs.</li>
+        <li>Certified Pre-Owned Program: Thoroughly inspected vehicles that come with a warranty for peace of mind.</li>
+        <li>Service & Maintenance: A state-of-the-art service center for all your repair and maintenance needs.</li>
+        <li>Trade-In Services: Get the best value for your current vehicle when you trade in for a new one.</li>
+    </ul>
+  </section>
+  <div class="team">
+    <h2>Meet the Team</h2>
+    <div class="team-member">
+        <img src="images/person1.jpg" alt="Team Member 1">
+        <h3>Jonas Muller</h3>
+        <p>General Manager</p>
+        <p>Jane has over 15 years of experience in the automotive industry and is dedicated to ensuring every customer drives away happy.</p>
+    </div>
+    <div class="team-member">
+        <img src="images/person2.jpg" alt="Team Member 2">
+        <h3>Sarah Smith</h3>
+        <p>Sales Manager</p>
+        <p>Sarah brings over a decade of experience in customer relations and is passionate about ensuring every customer feels valued and heard..</p>
+    </div>
+    <div class="team-member">
+      <img src="images/person3.png" alt="Team Member 2">
+      <h3>Michael Brown</h3>
+      <p>Head of Marketing</p>
+      <p>Michael is a marketing expert with a knack for creating compelling campaigns.He’s focused on innovation with 12 years in the industry, keeping our brand ahead..</p>
+  </div>
+  <section class="commitment">
+    <h2>Our Commitment</h2>
+    <p>At Vehicle Vault, we are committed to providing a hassle-free and transparent car buying experience. Our team is dedicated to delivering the highest level of customer service, ensuring that you find the right car at the right price. We believe in building lasting relationships with our customers, which is why so many of them return to us for their automotive needs year after year.</p>
+    <p>Visit us today and discover why Vehicle Vault is the preferred choice for car buyers in  City.</p>
+  </section>
+  <style>
+  
+    .commitment {
+      text-align: center;
+      max-width:full;
+      padding: 20px;
+      
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAR SHOP Home Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #1e293b;
+        --light: #f8fafc;
+        --gray: #94a3b8;
+        --dark: #0f172a;
+        --success: #10b981;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--dark);
+        background-color: var(--light);
+        line-height: 1.6;
+      }
+
+      /* Header & Navigation */
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-dark)
+        );
+        color: white;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .logo img {
+        height: 75px;
+        border-radius: 45%;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 0;
+        position: relative;
+      }
+
+      nav a:hover {
+        opacity: 0.9;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: white;
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+      .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        /* Individual item styling */
+        .item {
+            flex: 1 1 calc(33.33% - 40px);
+            max-width: calc(33.33% - 40px);
+            box-sizing: border-box;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image container styling */
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+            display: block;
+        }
+
+        /* Button styling */
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .nav-icon {
+        font-size: 1.2rem;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-icon:hover {
+        transform: translateY(-2px);
+      }
+
+      .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .search-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      
+      .search-container input {
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        border: none;
+        width: 200px;
+        transition: width 0.3s ease;
+        font-family: "Poppins", sans-serif;
+      }
+      
+      .search-container input:focus {
+        outline: none;
+        width: 250px;
+      }
+      
+      .search-container button {
+        background: none;
+        border: none;
+        color: rgb(43, 40, 40);
+        cursor: pointer;
+        margin-left: -35px;
+        z-index: 1;
+      }
+      
+      /* Add highlight style for search results */
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("images/home-img.png");
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        text-align: center;
+        padding: 0 2rem;
+      }
+
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid white;
+        margin-left: 1rem;
+      }
+
+      .btn-outline:hover {
+        background-color: white;
+        color: var(--primary);
+      }
+
+      /* Featured Cars */
+      .section {
+        padding: 5rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+        border-radius: 2px;
+      }
+
+      .section-title p {
+        color: var(--gray);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .car-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .car-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .car-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .car-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .car-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .car-card:hover .car-img img {
+        transform: scale(1.05);
+      }
+
+      .car-info {
+        padding: 1.5rem;
+      }
+
+      .car-make {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--secondary);
+      }
+
+      .car-model {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+      }
+
+      .car-price {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--success);
+        margin-bottom: 1rem;
+      }
+
+      .car-features {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        color: var(--gray);
+      }
+
+      .car-feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .car-feature i {
+        color: var(--primary);
+      }
+
+      /* Testimonials */
+      .testimonials {
+        background-color: var(--secondary);
+        color: white;
+      }
+
+      .testimonials .section-title h2 {
+        color: white;
+      }
+
+      .testimonials .section-title p {
+        color: var(--gray);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .testimonial-card {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.1);
+        font-family: serif;
+        line-height: 1;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .author-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .author-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .author-info h4 {
+        font-weight: 600;
+      }
+
+      .author-info p {
+        font-size: 0.9rem;
+        color: var(--gray);
+      }
+
+      /* Special Offers */
+      .offers {
+        background-color: #f1f5f9;
+      }
+
+      .offer-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .offer-img {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .offer-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .offer-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .offer-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--secondary);
+      }
+
+      .offer-desc {
+        margin-bottom: 1.5rem;
+        color: var(--gray);
+      }
+
+      .offer-expiry {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-top: auto;
+      }
+
+      /* Newsletter */
+      .newsletter {
+        background-color: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 4rem 2rem;
+      }
+
+      .newsletter-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .newsletter h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .newsletter p {
+        margin-bottom: 2rem;
+      }
+
+      .newsletter-form {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .newsletter-form input {
+        flex-grow: 1;
+        padding: 0.8rem 1rem;
+        border: none;
+        border-radius: 50px 0 0 50px;
+        font-size: 1rem;
+      }
+
+      .newsletter-form button {
+        padding: 0 2rem;
+        background-color: var(--secondary);
+        color: white;
+        border: none;
+        border-radius: 0 50px 50px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .newsletter-form button:hover {
+        background-color: var(--dark);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 4rem 2rem 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary);
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-col ul li a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer-col ul li a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 80%;
+          height: calc(100vh - 80px);
+          background-color: var(--secondary);
+          flex-direction: column;
+          padding: 2rem;
+          transition: all 0.3s ease;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .btn {
+          padding: 0.6rem 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero {
+          height: 70vh;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-form input {
+          border-radius: 50px;
+          margin-bottom: 1rem;
+        }
+
+        .newsletter-form button {
+          border-radius: 50px;
+          padding: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="images/logo.png" alt="Vehicle Vault Logo" />
+          <span>FAST CAR</span>
+        </div>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="offers.html">About Us</a></li>
+            <li><a href="register.html">Seller Registration</a></li>
+            <li><a href="login.html">Seller Portal</a></li>
+            <li>
+              <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search car...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Discover Your Dream Car</h1>
+        <p>
+          Explore our premium collection of luxury and performance vehicles from
+          the world's top manufacturers.
+        </p>
+        <div class="hero-buttons">
+          <a href="#featured" class="btn">Ecplore Cars</a>
+          <!--<a href="register.html" class="btn btn-outline">Sell Your Car</a>-->
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <!-- Car Items -->
+      <div class="item">
+          <div class="image-container">
+              <img src="images/tesla.png" alt="Tesla">
+          </div>
+          <button class="btn">Tesla</button>
+      </div>
+      <div class="item">
+          <div class="image-container">
+              <img src="images/BMW.jpg" alt="BMW">
+          </div>
+          <button class="btn">BMW</button>
+      </div>
+      <div class="item">
+          <div class="image-container">
+              <img src="images/Lambo.jpg" alt="Lamborghini">
+          </div>
+          <button class="btn">Lamborghini</button>
+      </div>
+      <div class="item">
+          <div class="image-container">
+              <img src="images/LandCruiser.jpg" alt="Land Cruiser">
+          </div>
+          <button class="btn">Land Cruiser</button>
+      </div>
+      <div class="item">
+          <div class="image-container">
+              <img src="images/Rover.jpg" alt="Range Rover">
+          </div>
+          <button class="btn">Range Rover</button>
+      </div>
+      <div class="item">
+          <div class="image-container">
+              <img src="images/Roll.jpg" alt="Rolls Royce">
+          </div>
+          <button class="btn">Rolls Royce</button>
+      </div>
+  </div>
+    <!-- Featured Cars -->
+    <section class="section" id="featured">
+      <div class="section-title">
+        <h2>Featured Vehicles</h2>
+        <p>Explore our hand-picked selection of premium automobiles</p>
+      </div>
+      <div class="car-grid">
+        <!-- Tesla -->
+        <div class="car-card">
+          <div class="car-img">
+            <img src="images/teslamodels.jpeg" alt="Tesla Model S" />
+          </div>
+          <div class="car-info">
+            <div class="car-make">Tesla</div>
+            <div class="car-model">Model S Plaid</div>
+            <div class="car-price">$129,990</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>1.99s 0-60</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-road"></i>
+                <span>396mi</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-bolt"></i>
+                <span>1,020hp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BMW -->
+        <div class="car-card">
+          <div class="car-img">
+            <img src="images/bmwm8.jpeg" alt="BMW M8" />
+          </div>
+          <div class="car-info">
+            <div class="car-make">BMW</div>
+            <div class="car-model">M8 Competition</div>
+            <div class="car-price">$133,995</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>3.0s 0-60</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-road"></i>
+                <span>17/25mpg</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-bolt"></i>
+                <span>617hp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lamborghini -->
+        <div class="car-card">
+          <div class="car-img">
+            <img src="images/lambohurracanevo.jpeg" alt="Lamborghini Huracan" />
+          </div>
+          <div class="car-info">
+            <div class="car-make">Lamborghini</div>
+            <div class="car-model">Huracan EVO</div>
+            <div class="car-price">$261,274</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>2.5s 0-60</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-road"></i>
+                <span>13/18mpg</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-bolt"></i>
+                <span>631hp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Land Cruiser -->
+        <div class="car-card">
+          <div class="car-img">
+            <img src="images/landcurser.jpeg" alt="Toyota Land Cruiser" />
+          </div>
+          <div class="car-info">
+            <div class="car-make">Toyota</div>
+            <div class="car-model">Land Cruiser</div>
+            <div class="car-price">$87,445</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>6.9s 0-60</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-road"></i>
+                <span>17/22mpg</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-bolt"></i>
+                <span>409hp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Range Rover -->
+        <div class="car-card">
+          <div class="car-img">
+            <img src="images/rangeroverautobiography.jpeg" alt="Range Rover" />
+          </div>
+          <div class="car-info">
+            <div class="car-make">Range Rover</div>
+            <div class="car-model">Autobiography</div>
+            <div class="car-price">$161,800</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>5.1s 0-60</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-road"></i>
+                <span>17/23mpg</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-bolt"></i>
+                <span>518hp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rolls Royce -->
+        <div class="car-card">
+          <div class="car-img">
+            <img src="images/rollsroyacephantom.jpeg" alt="Rolls Royce Phantom" />
+          </div>
+          <div class="car-info">
+            <div class="car-make">Rolls Royce</div>
+            <div class="car-model">Phantom</div>
+            <div class="car-price">$457,750</div>
+            <div class="car-features">
+              <div class="car-feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>5.1s 0-60</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-road"></i>
+                <span>12/19mpg</span>
+              </div>
+              <div class="car-feature">
+                <i class="fas fa-bolt"></i>
+                <span>563hp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+      <div class="section-title">
+        <h2>Client Testimonials</h2>
+        <p>
+          Hear what our satisfied customers have to say about their experience
+        </p>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            Vehicle Vault made buying my dream car a reality. The entire process
+            was seamless, and their team provided exceptional service from start
+            to finish.
+          </p>
+          <div class="testimonial-author">
+            <div class="author-img">
+              <img
+                src="images/32.jpg"
+                alt="Paul Smith"
+              />
+            </div>
+            <div class="author-info">
+              <h4>Paul Smith</h4>
+              <p>New York, NY</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            As a first-time luxury car buyer, I was nervous about the process.
+            The Vehicle Vault team guided me through every step and found me the
+            perfect SUV for my family.
+          </p>
+          <div class="testimonial-author">
+            <div class="author-img">
+              <img
+                src="images/75.jpg"
+                alt="Jacob Hadid"
+              />
+            </div>
+            <div class="author-info">
+              <h4>Jacob Hadid</h4>
+              <p>Houston, TX</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            I've purchased three vehicles through Vehicle Vault over the years.
+            Their knowledge of the market and negotiation skills have saved me
+            thousands each time.
+          </p>
+          <div class="testimonial-author">
+            <div class="author-img">
+              <img
+                src="images/65.jpg"
+                alt="Sarah Johnson"
+              />
+            </div>
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <p>Miami, FL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="section offers">
+      <div class="section-title">
+        <h2>Current Offers</h2>
+        <p>Take advantage of these limited-time promotions</p>
+      </div>
+
+      <div class="car-grid">
+        <div class="offer-card">
+          <div class="offer-img">
+            <img
+              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="Summer Sale"
+            />
+          </div>
+          <div class="offer-content">
+            <h3 class="offer-title">Summer Savings Event</h3>
+            <p class="offer-desc">
+              Save up to $15,000 on select 2023 models. Limited inventory
+              available at these prices.
+            </p>
+            <p class="offer-expiry">Offer ends August 31, 2024</p>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-img">
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="Lease Special"
+            />
+          </div>
+          <div class="offer-content">
+            <h3 class="offer-title">Lease Specials</h3>
+            <p class="offer-desc">
+              Low-mileage lease options starting at $499/month with $2,999 due
+              at signing.
+            </p>
+            <p class="offer-expiry">Offer ends July 15, 2024</p>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <div class="offer-img">
+            <img
+              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              alt="CPO Program"
+            />
+          </div>
+          <div class="offer-content">
+            <h3 class="offer-title">Certified Pre-Owned</h3>
+            <p class="offer-desc">
+              1.9% APR financing available on all certified pre-owned vehicles
+              with extended warranties.
+            </p>
+            <p class="offer-expiry">Offer ends September 30, 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="newsletter-container">
+        <h2>Join Our Newsletter</h2>
+        <p>
+          Subscribe to receive updates on exclusive offers, and automotive news.
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Vehicle Vault</h3>
+          <p>
+            Your premier destination for luxury and performance vehicles. We
+            connect discerning buyers with exceptional automobiles.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Offers.html">About Us</a></li>
+            <li><a href="register.html">Seller Registration</a></li>
+            <li><a href="login.html">Seller Page</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Vehicle Purchase</a></li>
+            <li><a href="#">Trade-In Evaluation</a></li>
+            <li><a href="#">Financing</a></li>
+            <li><a href="#">Extended Warranties</a></li>
+            <li><a href="#">Delivery Options</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal
+            </li>
+            <li><i class="fas fa-phone"></i> 01-543678</li>
+            <li><i class="fas fa-envelope"></i> info@fastcar.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Sat: 9am - 7pm</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; FAST CAR | All rights reserved. |
+          <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+
+    <script> 
+  document.getElementById("mobile-menu")?.addEventListener("click", function () {
+    document.getElementById("main-nav").classList.toggle("active");
+  });
+
+  document.getElementById("searchButton").addEventListener("click", searchCars);
+  document.getElementById("searchInput").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      searchCars();
+    }
+  });
+
+  function searchCars() {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase().trim();
+    const carCards = document.querySelectorAll(".car-card");
+    const carItems = document.querySelectorAll(".item");
+    let found = false;
+    
+    carItems.forEach(item => {
+      const itemText = item.textContent.toLowerCase();
+      if (itemText.includes(searchTerm)) {
+        found = true;
+        item.style.display = "block"; 
+        item.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        item.style.display = "none"; 
+      }
+    });
+    
+    carCards.forEach(card => {
+      const carText = card.textContent.toLowerCase();
+      if (carText.includes(searchTerm)) {
+        found = true;
+        card.style.display = "block"; // Show matching card
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        
+        const carModel = card.querySelector(".car-model");
+        if (carModel && carModel.textContent.toLowerCase().includes(searchTerm)) {
+          const regex = new RegExp(searchTerm, "gi");
+          carModel.innerHTML = carModel.textContent.replace(regex, match => 
+            `<span class="highlight">${match}</span>`
+          );
+        }
+      } else {
+        card.style.display = "none"; 
+      }
+    });
+    
+    if (!found) {
+      alert("No cars found matching your search.");
+      resetDisplay();
+    }
+    if (searchTerm === "") {
+      resetDisplay();
+    }
+  }
+  
+  function resetDisplay() {
+    document.querySelectorAll(".item").forEach(item => {
+      item.style.display = "block";
+    });
+    document.querySelectorAll(".car-card").forEach(card => {
+      card.style.display = "block";
+    });
+    document.querySelectorAll(".highlight").forEach(el => {
+      el.classList.remove("highlight");
+    });
+  }
+  document
+    .getElementById("mobile-menu")
+    .addEventListener("click", function () {
+      document.getElementById("main-nav").classList.toggle("active");
+    });
+    </script>
+  </body>
+</html>

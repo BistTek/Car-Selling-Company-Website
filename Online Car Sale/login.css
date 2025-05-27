@@ -1,0 +1,150 @@
+body {
+  font-family: "Nobile", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.user .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.user:hover .dropdown {
+  display: block;
+}
+
+.user .dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user .dropdown li {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user .dropdown li:last-child {
+  border-bottom: none;
+}
+
+.user .dropdown li a {
+  color: #494646;
+  text-decoration: none;
+}
+
+.user .dropdown li a:hover {
+  color: #000;
+}
+
+.txt_field {
+  size: 3cm;
+  position: Center;
+  margin-bottom: 0px;
+  margin-top: 20px;
+  margin-right: 0px;
+}
+
+.txt_field input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+.txt_field input:focus,
+.txt_field input:valid {
+  border-color: #2691d9;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #999;
+  transition: 0.5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+  top: 0;
+  font-size: 12px;
+  color: #2691d9;
+}
+
+input[type="submit"] {
+  width: 30%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 70px;
+  background-color: green;
+  border: none;
+  border-radius: 4px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+  background-color: #1a73a8;
+}
+
+.forgot {
+  font-size: 14px;
+  color: black;
+  margin-top: 10px;
+  margin-left: 5px;
+  transition: 0.5s;
+}
+
+.forgot:hover {
+  color: #2691d9;
+  cursor: pointer;
+}
+
+.users_signup {
+  font-size: 14px;
+  color: black;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+
+.users_signup a {
+  color: #2691d9;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.body {
+  width: 7cm;
+  height: 7cm;
+  background-color: linear-gradient(to bottom, #f1efef, rgb(92, 129, 195));
+  margin-top: 10%;
+  margin-left: 40%;
+  margin-bottom: 0;
+  margin-right: 40%;
+}
+.Login-sen {
+  size: 14;
+  margin-top: 10%;
+  margin-left: 16%;
+  font: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
